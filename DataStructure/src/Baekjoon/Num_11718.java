@@ -1,6 +1,7 @@
 package Baekjoon;
 /*
  * 문제
+
 입력 받은 대로 출력하는 프로그램을 작성하시오.
 입력
 입력이 주어진다. 입력은 최대 100줄로 이루어져 있고, 알파벳 소문자, 대문자, 공백, 숫자로만 이루어져 있다. 
@@ -14,17 +15,16 @@ public class Num_11718 {
 
 	public static void main(String[] args) throws Exception {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		String str = "";
+			String str = "";
 
-		while((str = br.readLine()) != null) {
-			bw.write(str + "\n");
+			while((str = br.readLine()) != null) {
+				bw.write(str + "\n");
+			}
+			br.close();
+			bw.flush();
+			bw.close();
 		}
-		br.close();
-		bw.flush();
-		bw.close();
-	}
-
 }
