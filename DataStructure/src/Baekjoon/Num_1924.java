@@ -15,11 +15,8 @@ public class Num_1924 {
 		int[] mth = {0, 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30};
 
 		for(int i = 1; i <= x; i++) {
-
 			days += mth[i];
-
 		}
-
 		days += y;
 
 		switch(days % 7) {
