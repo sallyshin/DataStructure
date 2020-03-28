@@ -1,7 +1,6 @@
 package Baekjoon;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 public class Num_8393 {
 
