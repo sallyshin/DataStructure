@@ -16,6 +16,8 @@ public class Num_2440 {
 			}
 			System.out.println("");
 		}
+		
+		br.close();
 	}
 
 }
