@@ -31,9 +31,9 @@ public class Num_2442 {
 					
 			}
 			System.out.println();
-
-
 		}
+		
+		br.close();
 
 	}
 
