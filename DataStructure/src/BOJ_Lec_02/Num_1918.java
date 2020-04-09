@@ -12,8 +12,7 @@ public class Num_1918 {
 			return 1;
 		}
 		return 2;
-	}
-
+	}	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Stack<Character> stack = new Stack<>();
@@ -29,7 +28,7 @@ public class Num_1918 {
 			case '-':
 			case '*':
 			case '/':
-				while(!stack.isEmpty() && priority(c) <= stack.peek()) {
+				while(!stack.isEmpty() && priority(c) <= priority(stack.peek())) {
 					sb.append(stack.pop());
 				}
 				stack.push(c);
