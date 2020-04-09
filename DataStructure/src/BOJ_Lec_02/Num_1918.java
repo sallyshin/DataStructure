@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 public class Num_1918 {
 	public static int priority(char c) {
-		if(c == ')' || c == '(') {
+		if(c == '(' || c == ')') {
 			return 0;
 		}
 		else if(c == '+' || c == '-') {
@@ -13,6 +13,7 @@ public class Num_1918 {
 		}
 		return 2;
 	}
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Stack<Character> stack = new Stack<>();
@@ -28,7 +29,7 @@ public class Num_1918 {
 			case '-':
 			case '*':
 			case '/':
-				while(!stack.isEmpty() && priority(stack.peek()) >= priority(c)) {
+				while(!stack.isEmpty() && priority(c) <= stack.peek()) {
 					sb.append(stack.pop());
 				}
 				stack.push(c);
@@ -45,11 +46,11 @@ public class Num_1918 {
 			default:
 				sb.append(c);
 			}
-			
 		}
 		while(!stack.isEmpty()) {
 			sb.append(stack.pop());
 		}
 		System.out.println(sb.toString());
+
 	}
 }
