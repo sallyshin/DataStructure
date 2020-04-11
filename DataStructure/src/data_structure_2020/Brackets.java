@@ -5,7 +5,7 @@ public class Brackets {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		Stack stack = new Stack();
+		Stack<Character> stack = new Stack();
 
 		while(true) {
 			String sr = br.readLine();
