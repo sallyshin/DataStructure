@@ -8,22 +8,21 @@ public class Num_1924 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int x = Integer.parseInt(st.nextToken());
-		int y = Integer.parseInt(st.nextToken());
-		int days = 0;
+		int month = Integer.parseInt(st.nextToken());
+		int day = Integer.parseInt(st.nextToken());
+		int total = 0;
 
-		int[] mth = {0, 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30};
+		int [] date = {0, 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30};
 
-		for(int i = 1; i <= x; i++) {
-			days += mth[i];
+		for(int i = 0; i < month; i++) {
+			total += date[i];
 		}
-		days += y;
+		total += day;
 
-		switch(days % 7) {
-		case 0:
-			System.out.println("SUN");
-			break;
-		case 1 :
+		int k = total % 7;
+
+		switch(k) {
+		case 1:
 			System.out.println("MON");
 			break;
 		case 2:
@@ -41,10 +40,13 @@ public class Num_1924 {
 		case 6:
 			System.out.println("SAT");
 			break;
+		default :
+			System.out.println("SUN");
+			break;
+
 		}
 
 		br.close();
-
 
 	}
 
