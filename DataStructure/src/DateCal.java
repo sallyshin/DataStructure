@@ -15,6 +15,9 @@ public class DateCal {
 		int day = sc.nextInt();
 		System.out.printf("%d년 %d월 %d일은 ", year, month, day);
 		boolean luna = true;
+		
+		//luna = (year % 4 == 0 && year % 100 != 0) || (year % 4 == 0 && year % 400 == 0)? true : false;
+		
 		if(year % 4 == 0) {
 			if(year % 100 == 0) {
 				luna = false;
