@@ -9,44 +9,39 @@ public class Num_1920 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int n = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine());
-
-		int n = Integer.parseInt(st.nextToken());
-
-		st = new StringTokenizer(br.readLine());
-		int [] arrayN = new int[n];
-		for(int i = 0; i < n; i++) {
-			arrayN[i] = Integer.parseInt(st.nextToken());
+		int[] arrN = new int[n+1];
+		for(int i = 1; i <= n; i++) {
+			arrN[i] = Integer.parseInt(st.nextToken());
 		}
-
-		int m = Integer.parseInt(br.readLine());
-
-		st = new StringTokenizer(br.readLine());
-		int [] arrayM = new int[m];
-		for(int i = 0; i < m; i++) {
-			arrayM[i] = Integer.parseInt(st.nextToken());
-		}
-
-		Arrays.sort(arrayN);
+		Arrays.sort(arrN);
 		
-		for(int i = 0; i < m; i++) {
-			int max = n-1;
-			int min = 0;
+		int m = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine());
+		int[] arrM = new int[m+1];
+		for(int i = 1; i <= m; i++) {
+			arrM[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		for(int i = 1; i <= m; i++) {
+			int max = n;
+			int min = 1;
 			int mid;
-
+			
 			while(max >= min) {
-				mid = (max + min) / 2;
-
-				if(arrayN[mid] > arrayM[i]) {
+				mid = (min + max) / 2;
+				
+				if(arrN[mid] > arrM[i]) {
 					max = mid - 1;
 				}
-				else if(arrayN[mid] < arrayM[i]) {
+				else if(arrN[mid] < arrM[i]) {
 					min = mid + 1;
-				}
-				else {
+				} else { // arrN[mid] == arrM[j]
 					System.out.println(1);
 					break;
-				} 
+				}
 			}
 			if(max < min) {
 				System.out.println(0);
