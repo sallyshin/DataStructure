@@ -16,29 +16,28 @@ public class Num_2805 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		Arrays.sort(arr);
-
-		int min = 0;
-		int max = arr[n-1];
-		int mid;
 		
+		long min = 0;
+		long max = arr[n-1];
+		long mid;
+
 		while(min <= max) {
 			mid = (min + max) / 2;
+			long rest = 0;
+			long sum = 0;
 			
-			int restTree = 0;
-			long sumTree = 0;
 			for(int i = 0; i < n; i++) {
-				restTree = arr[i] - mid;
-				if(restTree < 0) {
-					restTree = 0;
+				rest = arr[i] - mid;
+				if(rest <= 0) {
+					sum += 0;
+				} else {
+					sum += rest;
 				}
-				sumTree += restTree;
 			}
-			
-			if(m > sumTree) {
-				max = mid - 1;
-			} 
-			else if(m <= sumTree){
+			if(sum >= m) {
 				min = mid + 1;
+			} else {
+				max = mid - 1;
 			}
 		}
 		System.out.println(max);
