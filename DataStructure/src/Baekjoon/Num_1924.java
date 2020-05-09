@@ -14,7 +14,7 @@ public class Num_1924 {
 
 		int [] date = {0, 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30};
 
-		for(int i = 0; i < month; i++) {
+		for(int i = 1; i <= month; i++) {
 			total += date[i];
 		}
 		total += day;
