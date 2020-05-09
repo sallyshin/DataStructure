@@ -2,7 +2,7 @@ package Baekjoon;
 import java.util.Stack;
 import java.io.*;
 public class Num_4949 {
-
+// 균형잡힌세상
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
