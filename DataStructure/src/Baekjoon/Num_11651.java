@@ -55,6 +55,7 @@ public class Num_11651 {
 		for(int i = 0; i < n; i++) {
 			System.out.println(arr[i].getX() + " " + arr[i].getY());
 		}
+		
+		 br.close();
 	}
-
 }
