@@ -5,44 +5,44 @@ public class Num_2110 {
 //공유기 설치
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());		
-		int n = Integer.parseInt(st.nextToken());
-		int c = Integer.parseInt(st.nextToken());
-		int[] house = new int[n+1];
-		
-		for(int i = 1; i <= n
-				; i++) {
-			house[i] = Integer.parseInt(br.readLine());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int n = Integer.valueOf(st.nextToken());
+		int c = Integer.valueOf(st.nextToken());
+		int[] houses = new int[n+1];
+		for(int i = 1; i <= n; i++) {
+			houses[i] = Integer.parseInt(br.readLine());
 		}
-		Arrays.sort(house);
+		Arrays.parallelSort(houses);
 		
-		int low = 1; // 최소 거리
-		int high = house[n] - house[1]; // 가장 먼거리
-		int distance; // 집사이의 간격
-		int ans = 0; // 가장 인접한 공유기의 최대 거리 : 답
-		
+		int low = 1;
+		int high = houses[n] - houses[1];
+		int mid;
+		int distance;
+
 		
 		while(low <= high) {
-			int mid = (low + high) / 2;
-			int start = house[1];
-			int wifi = 1;
+			mid = (low + high) / 2;
+			int wifi = 1; // 공유기 처음집에 하나 설치했다고 생각
 			
+			int start = houses[1];
 			for(int i = 2; i <= n; i++) {
-				distance = house[i] - start;
-				
-				if(mid <= distance) {
+				distance = houses[i] - start; // 집 사이의 거리구하기
+				if(distance >= mid) {  // 거리가 mid값보다 크면 공유기 하나 설치
 					wifi++;
-					start = house[i];
+					start = houses[i];
 				}
 			}
 			
 			if(wifi >= c) {
 				low = mid + 1;
-				ans = mid; // 근데 1 4 8 혹은 1 4 9 잖아. 1 4 8에서 끝나지 않아?
-			} else {
-				high = mid -1;
+			}else {
+				high = mid - 1;
 			}
 		}
-		System.out.println(ans);
+		bw.write(high + ""); // 거리 최대값
+		br.close();
+		bw.flush();
+		bw.close();
 	}
 }
