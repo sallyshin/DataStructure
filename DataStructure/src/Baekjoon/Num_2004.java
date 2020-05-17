@@ -13,7 +13,7 @@ public class Num_2004 {
 		}
 		return five;
 	}
-	
+	// 범위가 int형을 넘어가기때문에 long형으로 변수 선언
 	public static long twoCount(long n) {
 		long two = 0;
 		long i;
