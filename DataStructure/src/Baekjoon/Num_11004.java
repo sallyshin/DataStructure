@@ -40,7 +40,7 @@ public class Num_11004 {
 
 		return i;
 	}
-	public static void swap(int[] arr, int a, int b) { // 두 데이터 바꿔주는 메소드
+	public static void  swap(int[] arr, int a, int b) { // 두 데이터 바꿔주는 메소드
 		int temp = arr[b];
 		arr[b] = arr[a];
 		arr[a] = temp;
