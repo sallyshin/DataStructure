@@ -32,8 +32,8 @@ public class Num_1026 {
 		Collections.sort(a);
 		Collections.sort(b, Collections.reverseOrder()); 
 		/*
-		 * reverse()는 String을 역순으로 함. 
-		 * 숫자를 역순으로 하려면 reverseOrder()을 사용해야함
+		 * Collections.sort()는 내림차순이 아닌 리스트의 "구성을 반대로 뒤집는 것"
+		 * 숫자를 내림차순으로 하려면 reverseOrder()을 사용해야함
 		 */
 		
 		for(int i = 0; i < n; i++) {
