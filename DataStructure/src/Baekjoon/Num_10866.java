@@ -16,7 +16,7 @@ public class Num_10866 {
 			} else if(order.equals("push_back")) {
 				deque.addLast(Integer.parseInt(st.nextToken()));
 			} else if(order.equals("pop_front")) {
-				System.out.println((deque.isEmpty()? -1 : deque.pop())); // Deque에서 popd은 데이터를 와서 읽고 없앰
+				System.out.println((deque.isEmpty()? -1 : deque.pop())); // Deque에서 pop은 데이터를 와서 읽고 없앰
 			} else if(order.equals("pop_back")) {
 				System.out.println((deque.isEmpty()? -1 : deque.removeLast()) + "");
 			} else if(order.equals("size")) {
