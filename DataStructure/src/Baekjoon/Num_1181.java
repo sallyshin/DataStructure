@@ -20,7 +20,7 @@ public class Num_1181 {
 		// Comparator은 커스터마이즈 된 정렬, 새로운 객체를 만들어서 비교하면 된다. 이 새로운 정렬방식은 sort(정렬대상, "정렬방식") 중 정렬방식에 적용
 		Comparator<String> compareWord = new Comparator<String>() {
 			public int compare(String a, String b) {
-				int len = a.length() - b.length(); // 오름차순 정렬 : 나 - 비교대상
+				int len = a.length() - b.length(); // 오름차순 정렬 : 나 - 비교대상, 내림차순 : 비교대상 - 나
 				if(len != 0) return len;
 				return a.compareTo(b);
 			}
