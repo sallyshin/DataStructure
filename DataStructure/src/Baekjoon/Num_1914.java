@@ -5,14 +5,14 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 public class Num_1914 {
 	// 하노이탑
-	public static void hanoi(int n, int a, int b, int c) {
+	public static void hanoi(int n, int start, int mid, int end) {
 		if(n == 1) {
-			System.out.println(a + " " + b);
+			System.out.println(start + " " + end);
 			return; 
 		}
-		hanoi(n-1, a, b, c);
-		System.out.println(a + " " + c);
-		hanoi(n-1, b, a, c);
+		hanoi(n-1, start, end, mid);
+		System.out.println(start + " " + end);
+		hanoi(n-1, mid, start, end);
 		return;
 	}
 
@@ -24,7 +24,9 @@ public class Num_1914 {
 		BigInteger count = bi.pow(n).subtract(BigInteger.ONE);
 		
 		System.out.println(count);
-		if(n <= 20) hanoi(n, 1, 2, 3);
+		if(n <= 20) {
+			hanoi(n, 1, 2, 3);
+		}
 		
 		
 	}
