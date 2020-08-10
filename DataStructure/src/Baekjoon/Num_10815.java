@@ -22,29 +22,29 @@ public class Num_10815 {
 		}
 
 
-		for(int i = 0; i < m; i++) {
-			int min = 0;
-			int max = n-1;
-			int mid;
-
-			while(max >= min) {
-				mid = (min + max) / 2;
-
-				if(arrN[mid] > arrM[i]) {
-					max = mid - 1;
-				}
-				else if(arrN[mid] < arrM[i]) {
-					min = mid + 1;
-				}
-				else {
-					System.out.print(1 + " ");
-					break;
-				}
-			}
-			if(max < min) {
-				System.out.print(0 + " ");
-			}
-		}
+//		for(int i = 0; i < m; i++) {
+//			int min = 0;
+//			int max = n-1;
+//			int mid;
+//
+//			while(max >= min) {
+//				mid = (min + max) / 2;
+//
+//				if(arrN[mid] > arrM[i]) {
+//					max = mid - 1;
+//				}
+//				else if(arrN[mid] < arrM[i]) {
+//					min = mid + 1;
+//				}
+//				else {
+//					System.out.print(1 + " ");
+//					break;
+//				}
+//			}
+//			if(max < min) {
+//				System.out.print(0 + " ");
+//			}
+//		}
 	}
 
 }
