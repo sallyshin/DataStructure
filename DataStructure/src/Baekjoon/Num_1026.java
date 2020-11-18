@@ -32,7 +32,7 @@ public class Num_1026 {
 		Collections.sort(a);
 		Collections.sort(b, Collections.reverseOrder()); 
 		/*
-		 * Collections.sort()는 내림차순이 아닌 리스트의 "구성을 반대로 뒤집는 것"
+		 * Collections.reverse()는 내림차순이 아닌 리스트의 "구성을 반대로 뒤집는 것"
 		 * 숫자를 내림차순으로 하려면 reverseOrder()을 사용해야함
 		 */
 		
