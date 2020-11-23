@@ -13,11 +13,13 @@ public class Num_10872 {
 		int n = Integer.parseInt(br.readLine());
 
 		System.out.println(factorial(n));
+		br.close();
+		
 	}
 	public static int factorial(int num) {
 		if(num == 0) return 1;
-		int n = num;
-		return n*factorial(n-1);
+		
+		return num*factorial(num-1);
 	}
 
 }
