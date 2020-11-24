@@ -8,8 +8,9 @@ import java.io.*;
 public class Num_2231 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		String s = n + ""; // 자리수 구하기위하여 String형으로 n 받아놓고
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String s = br.readLine(); // 자리수 구하기위하여 String형으로 n 받아놓고
+		int n = Integer.parseInt(s);
 		
 		int count = s.length(); // 길이를 구하면 자리수
 		
@@ -29,7 +30,10 @@ public class Num_2231 {
 			}
 			//만약 답을 찾지 못했다면 생성자가 없다 : ans는 0을 출력
 		}
-		System.out.println(ans);
+		bw.write(ans + "");
+		bw.flush();
+		bw.close();
+//		System.out.println(ans);
 		br.close();
 	}
 	
