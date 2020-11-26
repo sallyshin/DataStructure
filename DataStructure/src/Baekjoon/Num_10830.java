@@ -11,7 +11,6 @@ public class Num_10830 {
 
 	static int n;
 	static int arr[][];
-	static StringBuilder sb;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,21 +28,20 @@ public class Num_10830 {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		sb = new StringBuilder();
+
+		StringBuilder sb = new StringBuilder();
 		result = pow(arr, b);
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
-				sb.append(result[i][j] + " ");
+				sb.append(result[i][j] % 1000 + " ");
 			}
 			sb.append("\n");
 		}
 		System.out.println(sb);
-
 	}
-
-	public static int[][] calculate(int[][]arr1, int[][]arr2) {
-		int result[][] = new int[n][n];
-
+	public static int[][] calculate(int[][] arr1, int[][] arr2){
+		int[][] result = new int[n][n];
+		
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
 				int sum = 0;
@@ -55,17 +53,15 @@ public class Num_10830 {
 		}
 		return result;
 	}
-
-	public static int[][] pow(int[][] a, long b) {
-
+	public static int[][] pow(int[][] a, long b){
 		if(b == 1) {
 			return a;
-		} else if(b%2 == 0) {
-			int temp[][] = pow(a, b/2);
+		} 
+		else if(b % 2 == 0) {
+			int[][] temp = pow(a, b/2);
 			return calculate(temp, temp);
-		} else {
-			return calculate(pow(a, b-1), a);
 		}
+		int[][] temp = pow(a, b-1);
+		return calculate(temp, a);
 	}
-
 }
