@@ -1,24 +1,38 @@
+// 수 정렬하기 3
+// https://www.acmicpc.net/problem/10989
+
 package Baekjoon;
+
 import java.util.*;
 import java.io.*;
+
 public class Num_10989 {
-// 수 정렬하기 3
+
+	static int[] arr;
+	static int n;
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int[] arr = new int[n];
+		n = Integer.parseInt(br.readLine());
+		
+		arr = new int[10001];
 		
 		for(int i = 0; i < n; i++) {
-			arr[i] = Integer.parseInt(br.readLine());
-		}
-		Arrays.parallelSort(arr);
-		
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		for(int i = 0; i < n; i++) {
-			bw.write(arr[i] + "\n");;
+			int num = Integer.parseInt(br.readLine());
+			arr[num]++;
 		}
 		br.close();
-		bw.close();
+		
+		StringBuilder sb = new StringBuilder();
+		// 카운팅 정렬
+		for(int i = 0; i <= 10000; i++) {
+			
+			while(arr[i] > 0) {
+				sb.append(i).append("\n");
+				arr[i]--;
+			}
+		}
+		System.out.println(sb.toString());
 	}
+
 }
