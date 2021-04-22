@@ -1,2 +1,1 @@
-# DataStructure 
-// BOJ solving algorithm and data structure for training.
+# 백준 알고리즘 DataStructure 
